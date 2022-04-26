@@ -9,6 +9,7 @@ def user
     email: 'illysha@spacex.com'
   )
 end
+
 # Пользователь для тестирования не текстовых значений
 def user_not_str
   User.new(
