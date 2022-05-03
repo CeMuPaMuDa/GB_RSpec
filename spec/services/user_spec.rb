@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-require_relative '../lib/user'
 def user
-  User.new(
+  Services::User.new(
     surname: 'Маск',
     name: 'Илон',
     patronymic: 'Марсианович',
@@ -12,7 +11,7 @@ end
 
 # Пользователь для тестирования не текстовых значений
 def user_not_str
-  User.new(
+  Services::User.new(
     surname: 111,
     name: 3.14,
     patronymic: '333',
@@ -20,7 +19,7 @@ def user_not_str
   )
 end
 
-RSpec.describe User do
+RSpec.describe Services::User do
   context 'методы класса возвращают' do
     it 'имя:' do
       expect(user.name).to eq('Илон')
