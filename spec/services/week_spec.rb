@@ -14,4 +14,9 @@ RSpec.describe Services::Week do
       expect(described_class.friday).to eq 'пятница'
     end
   end
+  context 'возвращает ошибку' do
+    it 'если метода не существует(july):' do
+      expect{described_class.july}.to raise_error(NoMethodError)
+    end
+  end
 end
